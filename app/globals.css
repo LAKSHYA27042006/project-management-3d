@@ -65,51 +65,51 @@ body {
 
   /* ===== LIGHT THEME ===== */
   .light {
-    --background: 210 40% 98%;
-    --foreground: 220 25% 10%;
+    --background: 220 30% 97%;
+    --foreground: 220 40% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 10%;
+    --card-foreground: 220 40% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 10%;
-    --primary: 210 85% 50%;
+    --popover-foreground: 220 40% 10%;
+    --primary: 210 90% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 30% 92%;
-    --secondary-foreground: 220 20% 25%;
-    --muted: 210 25% 94%;
-    --muted-foreground: 220 15% 45%;
-    --accent: 280 70% 55%;
+    --secondary: 280 60% 95%;
+    --secondary-foreground: 220 35% 15%;
+    --muted: 210 30% 92%;
+    --muted-foreground: 220 25% 35%;
+    --accent: 280 75% 50%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 75% 50%;
+    --destructive: 0 80% 45%;
     --destructive-foreground: 0 0% 100%;
-    --border: 210 25% 88%;
-    --input: 210 25% 90%;
-    --ring: 210 85% 50%;
-    --chart-1: 210 85% 50%;
-    --chart-2: 160 65% 40%;
-    --chart-3: 30 85% 50%;
-    --chart-4: 280 70% 55%;
-    --chart-5: 340 80% 50%;
+    --border: 210 30% 85%;
+    --input: 210 30% 88%;
+    --ring: 210 90% 45%;
+    --chart-1: 210 90% 45%;
+    --chart-2: 160 70% 35%;
+    --chart-3: 30 90% 45%;
+    --chart-4: 280 75% 50%;
+    --chart-5: 340 85% 45%;
     --radius: 0.5rem;
-    --sidebar-background: 210 35% 96%;
-    --sidebar-foreground: 220 20% 35%;
-    --sidebar-primary: 210 85% 50%;
+    --sidebar-background: 220 35% 95%;
+    --sidebar-foreground: 220 35% 20%;
+    --sidebar-primary: 210 90% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 30% 92%;
-    --sidebar-accent-foreground: 220 20% 25%;
-    --sidebar-border: 210 25% 88%;
-    --sidebar-ring: 210 85% 50%;
-    --success: 142 75% 35%;
+    --sidebar-accent: 280 60% 92%;
+    --sidebar-accent-foreground: 220 35% 15%;
+    --sidebar-border: 210 30% 85%;
+    --sidebar-ring: 210 90% 45%;
+    --success: 142 80% 30%;
     --success-foreground: 0 0% 100%;
-    --warning: 38 95% 45%;
+    --warning: 38 100% 40%;
     --warning-foreground: 0 0% 100%;
     
     /* 3D Effect Variables - Light (Colorful) */
-    --glass-bg: hsla(0, 0%, 100%, 0.8);
-    --glass-border: hsla(210, 85%, 50%, 0.2);
-    --glow-color: hsla(210, 85%, 50%, 0.25);
-    --float-shadow: 0 20px 60px -15px hsla(210, 50%, 30%, 0.25);
-    --card-shadow: 0 8px 32px -8px hsla(210, 50%, 30%, 0.15);
-    --text-glow: 0 0 20px hsla(210, 85%, 50%, 0.3);
+    --glass-bg: hsla(220, 50%, 99%, 0.9);
+    --glass-border: hsla(210, 90%, 45%, 0.25);
+    --glow-color: hsla(280, 75%, 50%, 0.2);
+    --float-shadow: 0 20px 60px -15px hsla(220, 60%, 20%, 0.2);
+    --card-shadow: 0 8px 32px -8px hsla(220, 60%, 20%, 0.12);
+    --text-glow: 0 0 30px hsla(280, 75%, 50%, 0.25);
   }
 }
 

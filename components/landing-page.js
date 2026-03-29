@@ -68,11 +68,11 @@ export default function LandingPage() {
         }`}>
           {t("trustedBy")}
         </div>
-        <h1 className={`text-5xl md:text-6xl font-bold leading-tight mb-6 text-balance animate-fade-in-3d stagger-1 ${isDark ? "text-[hsl(210,20%,95%)]" : "text-[hsl(220,25%,15%)]"}`}>
+        <h1 className={`text-5xl md:text-6xl font-bold leading-tight mb-6 text-balance animate-fade-in-3d stagger-1 ${isDark ? "text-[hsl(210,20%,95%)]" : "text-[hsl(220,40%,10%)]"}`}>
           {t("heroTitle")}
           <span className="gradient-text"> {t("heroHighlight")}</span>
         </h1>
-        <p className={`text-lg max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-3d stagger-2 ${isDark ? "text-[hsl(215,15%,55%)]" : "text-[hsl(220,15%,45%)]"}`}>
+        <p className={`text-lg max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-3d stagger-2 ${isDark ? "text-[hsl(215,15%,55%)]" : "text-[hsl(220,25%,35%)]"}`}>
           {t("heroSubtitle")}
         </p>
         <div className="flex items-center justify-center gap-4 animate-fade-in-3d stagger-3">
@@ -217,8 +217,8 @@ export default function LandingPage() {
                   <path d={f.icon} />
                 </svg>
               </div>
-              <h3 className={`text-base font-semibold mb-2 ${isDark ? "text-[hsl(210,20%,92%)]" : "text-[hsl(220,25%,15%)]"}`}>{f.title}</h3>
-              <p className={`text-sm leading-relaxed ${isDark ? "text-[hsl(215,15%,55%)]" : "text-[hsl(220,15%,45%)]"}`}>{f.desc}</p>
+              <h3 className={`text-base font-semibold mb-2 ${isDark ? "text-[hsl(210,20%,92%)]" : "text-[hsl(220,40%,10%)]"}`}>{f.title}</h3>
+              <p className={`text-sm leading-relaxed ${isDark ? "text-[hsl(215,15%,55%)]" : "text-[hsl(220,30%,30%)]"}`}>{f.desc}</p>
             </div>
           ))}
         </div>
@@ -277,10 +277,10 @@ export default function LandingPage() {
               <div className="mt-2 mb-1">
                 <span className={`text-3xl font-bold ${isDark ? "text-[hsl(210,20%,95%)]" : "text-[hsl(220,25%,15%)]"}`}>{p.price}</span>
               </div>
-              <p className={`text-sm mb-6 ${isDark ? "text-[hsl(215,15%,55%)]" : "text-[hsl(220,15%,45%)]"}`}>{p.desc}</p>
+              <p className={`text-sm mb-6 ${isDark ? "text-[hsl(215,15%,55%)]" : "text-[hsl(220,30%,30%)]"}`}>{p.desc}</p>
               <ul className="space-y-3 mb-6">
                 {p.features.map((f, j) => (
-                  <li key={j} className={`flex items-center gap-2 text-sm ${isDark ? "text-[hsl(210,20%,80%)]" : "text-[hsl(220,20%,35%)]"}`}>
+                  <li key={j} className={`flex items-center gap-2 text-sm ${isDark ? "text-[hsl(210,20%,80%)]" : "text-[hsl(220,35%,20%)]"}`}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(142,72%,42%)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>

@@ -38,6 +38,45 @@ export default function Chatbot() {
     setShowQuestions(false);
   };
 
+  // General greetings handler
+  const getGreetingResponse = (message) => {
+    const lowerMsg = message.toLowerCase().trim();
+    
+    // Greeting patterns
+    const greetings = ["hi", "hello", "hey", "hii", "hiii", "helo", "hai", "hola", "namaste", "vanakkam"];
+    const howAreYou = ["how are you", "how r u", "how are u", "how r you", "hru", "wassup", "whats up", "what's up"];
+    const whoAreYou = ["who are you", "who r u", "who are u", "what are you", "what r u", "your name", "ur name"];
+    const thanks = ["thank you", "thanks", "thankyou", "thx", "ty"];
+    const bye = ["bye", "goodbye", "good bye", "see you", "see ya", "cya"];
+    
+    // Check for greetings
+    if (greetings.some(g => lowerMsg === g || lowerMsg.startsWith(g + " ") || lowerMsg.startsWith(g + "!"))) {
+      return "Hello! I'm the ProjectFlow Assistant. I can help you with questions about our project management platform. Please select a question from the list below, or ask me anything related to ProjectFlow!";
+    }
+    
+    // Check for "how are you"
+    if (howAreYou.some(h => lowerMsg.includes(h))) {
+      return "I'm doing great, thank you for asking! I'm here to help you with any questions about ProjectFlow. Feel free to pick a question from the list or ask me anything!";
+    }
+    
+    // Check for "who are you"
+    if (whoAreYou.some(w => lowerMsg.includes(w))) {
+      return "I'm the ProjectFlow Chatbot Assistant! I'm here to help answer your questions about our project management platform. I can help with information about features, pricing, getting started, and more. Please select a question from the suggestions below!";
+    }
+    
+    // Check for thanks
+    if (thanks.some(t => lowerMsg.includes(t))) {
+      return "You're welcome! If you have any more questions about ProjectFlow, feel free to ask. I'm here to help!";
+    }
+    
+    // Check for bye
+    if (bye.some(b => lowerMsg === b || lowerMsg.startsWith(b + " ") || lowerMsg.endsWith(" " + b))) {
+      return "Goodbye! Thanks for chatting with me. Feel free to come back anytime you have questions about ProjectFlow!";
+    }
+    
+    return null;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -45,7 +84,19 @@ export default function Chatbot() {
     const userMessage = input.trim();
     setInput("");
 
-    // Find matching question
+    // First check for general greetings
+    const greetingResponse = getGreetingResponse(userMessage);
+    if (greetingResponse) {
+      setMessages((prev) => [
+        ...prev,
+        { type: "user", text: userMessage },
+        { type: "bot", text: greetingResponse },
+      ]);
+      setShowQuestions(false);
+      return;
+    }
+
+    // Find matching question from QA list
     const match = qa.find(
       (item) =>
         item.q.toLowerCase().includes(userMessage.toLowerCase()) ||
@@ -55,8 +106,8 @@ export default function Chatbot() {
     const botResponse = match
       ? match.a
       : user
-      ? "I'm sorry, I don't have information about that. Please try selecting from the suggested questions or contact our support team for more help."
-      : "I'm sorry, I don't have information about that. Please try selecting from the suggested questions or sign up to get started!";
+      ? "I'm sorry, I don't have information about that specific topic. I'm the ProjectFlow Assistant and I can help you with questions about projects, tasks, team collaboration, and more. Please try selecting from the suggested questions below, or contact our support team for personalized help!"
+      : "I'm sorry, I don't have information about that specific topic. I'm the ProjectFlow Assistant and I can answer questions about our platform, pricing, features, and getting started. Please try selecting from the suggested questions below, or sign up to explore more!";
 
     setMessages((prev) => [
       ...prev,
