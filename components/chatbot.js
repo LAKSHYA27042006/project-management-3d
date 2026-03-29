@@ -193,31 +193,9 @@ export default function Chatbot() {
               isDark ? "bg-[hsl(220,15%,10%)]" : "bg-[hsl(210,40%,98%)]"
             }`}
           >
-            {messages.length === 0 && showQuestions ? (
-              <div className="space-y-2">
-                <p
-                  className={`text-xs font-medium mb-3 ${
-                    isDark ? "text-[hsl(215,15%,55%)]" : "text-[hsl(220,15%,45%)]"
-                  }`}
-                >
-                  {user ? "Common questions:" : "Frequently asked:"}
-                </p>
-                {qa.map((item, i) => (
-                  <button
-                    key={i}
-                    onClick={() => handleQuestionClick(item.q, item.a)}
-                    className={`w-full text-left p-3 rounded-lg text-xs transition-all hover:scale-[1.01] ${
-                      isDark
-                        ? "bg-[hsl(220,15%,16%)] hover:bg-[hsl(220,15%,20%)] text-[hsl(210,20%,85%)] border border-[hsl(220,12%,22%)]"
-                        : "bg-white hover:bg-[hsl(210,30%,96%)] text-[hsl(220,25%,20%)] border border-[hsl(210,25%,88%)] shadow-sm"
-                    }`}
-                  >
-                    {item.q}
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <>
+            {/* Show messages if there are any */}
+            {messages.length > 0 && (
+              <div className="mb-4">
                 {messages.map((msg, i) => (
                   <div
                     key={i}
@@ -241,19 +219,50 @@ export default function Chatbot() {
                   </div>
                 ))}
                 <div ref={messagesEndRef} />
-                {!showQuestions && (
-                  <button
-                    onClick={handleShowQuestions}
-                    className={`mt-2 text-xs font-medium ${
-                      isDark
-                        ? "text-[hsl(210,80%,60%)] hover:text-[hsl(210,80%,70%)]"
-                        : "text-[hsl(210,85%,50%)] hover:text-[hsl(210,85%,40%)]"
-                    }`}
-                  >
-                    Show suggested questions
-                  </button>
-                )}
-              </>
+              </div>
+            )}
+
+            {/* Show suggested questions section */}
+            {showQuestions ? (
+              <div className="space-y-2">
+                <p
+                  className={`text-xs font-medium mb-3 ${
+                    isDark ? "text-[hsl(215,15%,55%)]" : "text-[hsl(220,30%,40%)]"
+                  }`}
+                >
+                  {messages.length > 0 
+                    ? "More questions you can ask:" 
+                    : user 
+                    ? "Common questions:" 
+                    : "Frequently asked:"}
+                </p>
+                <div className="max-h-48 overflow-y-auto space-y-2">
+                  {qa.map((item, i) => (
+                    <button
+                      key={i}
+                      onClick={() => handleQuestionClick(item.q, item.a)}
+                      className={`w-full text-left p-3 rounded-lg text-xs transition-all hover:scale-[1.01] cursor-pointer ${
+                        isDark
+                          ? "bg-[hsl(220,15%,16%)] hover:bg-[hsl(220,15%,20%)] text-[hsl(210,20%,85%)] border border-[hsl(220,12%,22%)]"
+                          : "bg-white hover:bg-[hsl(210,30%,96%)] text-[hsl(220,25%,20%)] border border-[hsl(210,25%,88%)] shadow-sm"
+                      }`}
+                    >
+                      {item.q}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <button
+                onClick={handleShowQuestions}
+                className={`w-full py-3 px-4 rounded-lg text-xs font-medium transition-all cursor-pointer border ${
+                  isDark
+                    ? "bg-[hsl(220,15%,16%)] hover:bg-[hsl(220,15%,20%)] text-[hsl(210,80%,60%)] border-[hsl(210,80%,40%)]"
+                    : "bg-[hsl(210,50%,96%)] hover:bg-[hsl(210,50%,92%)] text-[hsl(210,85%,45%)] border-[hsl(210,85%,70%)]"
+                }`}
+              >
+                Show Suggested Questions
+              </button>
             )}
           </div>
 
